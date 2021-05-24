@@ -1,0 +1,30 @@
+server:
+  port: 8082
+  address: 192.168.134.54
+
+file:
+  upload-dir: uploadfiles
+
+
+spring:
+  application:
+    name : my-second-service
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB
+      file-size-threshold: 2KB
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: ${server.address}
+    instance-id: ${server.address}:${spring.application.name}:${server.port}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
