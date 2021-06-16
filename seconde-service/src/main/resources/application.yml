@@ -1,6 +1,6 @@
 server:
   port: 8082
-  address: 192.168.134.54
+  address: 192.168.8.165
 
 file:
   upload-dir: uploadfiles
